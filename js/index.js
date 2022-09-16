@@ -13,6 +13,8 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById(`img-${i}`).src = `/src/${randomizedList[i]}.png`;
   });
 
+  // for each card
+
   cards.forEach((card, i) => {
     card.addEventListener("click", () => {
       if (cardA == null) {
@@ -33,8 +35,17 @@ window.addEventListener("DOMContentLoaded", () => {
             IndxA = null;
             IndxB = null;
             if (flippedCard == 3) {
+              flippedCard = 0;
               points += 1;
               document.getElementById("score").innerHTML = points;
+              cardA = null;
+              cardB = null;
+              IndxA = null;
+              IndxB = null;
+              cards.forEach((card) => {
+                card.children[0].classList.remove("flip");
+                card.children[0].classList.remove("display-none");
+              });
             }
           }, 600);
         } else {
@@ -47,25 +58,20 @@ window.addEventListener("DOMContentLoaded", () => {
             IndxB = null;
           }, 600);
         }
-
-        setTimeout(() => {
-          if (flippedCard == 3) {
-            flippedCard = 0;
-            cardA = null;
-            cardB = null;
-            IndxA = null;
-            IndxB = null;
-            cards.forEach((card) => {
-              card.children[0].classList.remove("flip");
-              card.children[0].classList.remove("display-none");
-            });
-          }
-        }, 1200);
       }
     });
   });
+
+  // reset the game
+
+  const reset = document.getElementById("reset");
+  reset.addEventListener("click", () => {
+    points = 0;
+    document.getElementById("score").innerHTML = points;
+  });
 });
 
+//  shuffle function
 const shuffle = (array) => {
   let currentIndex = array.length,
     randomIndex;

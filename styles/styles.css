@@ -102,3 +102,25 @@ body {
 .display-none {
   display: none;
 }
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 1rem;
+  max-width: 30rem;
+  margin: auto;
+}
+button {
+  color: #28a790;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 2rem;
+  background: white;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+}

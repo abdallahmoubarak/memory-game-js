@@ -50,8 +50,20 @@ body {
   transform-style: preserve-3d;
 }
 
-.card:hover .card-inner {
+/* .card:hover .card-inner {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+} */
+
+.flip {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
 }
 
 .front,
@@ -85,4 +97,8 @@ body {
 .back {
   background-color: #f4fcf1;
   color: #28a790;
+}
+
+.display-none {
+  display: none;
 }
